@@ -1,0 +1,1 @@
+To test locally use: ng serve
