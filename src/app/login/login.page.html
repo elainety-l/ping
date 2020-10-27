@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      P!NG
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <img src="../assets/icon/ping.png" />
+  </div>
+  <ion-item class="loginUsername">
+    <ion-input placeholder="Username" type="text"></ion-input>
+  </ion-item>
+  <ion-item class="loginPassword">
+    <ion-input placeholder="Password" type="password"></ion-input>
+  </ion-item>
+  <div class="ion-text-center">
+    <a href="/forget-password" routerDirection="forward"> Forgot Password? </a>
+  </div>
+  <br />
+  <div class="ion-text-center">
+    <ion-button color="primary" href="/home">Login</ion-button>
+  </div>
+  <br />
+  <div class="ion-text-center">Don't have a account?</div>
+  <div class="ion-text-center">
+    <ion-button href="/register" color="primary">Sign Up</ion-button>
+  </div>
+</ion-content>
