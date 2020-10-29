@@ -1,6 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>userProfile</ion-title>
+    <ion-row>
+      <ion-title>userProfile</ion-title>
+      <ion-item class="ion-text-right" (click)="logout()" href="/login">
+        <ion-col class="ion-align-self-right">
+          <ion-icon name="log-out"></ion-icon>
+          Logout
+        </ion-col>
+      </ion-item>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
@@ -21,25 +29,32 @@
           </a>
         </div>
       </ion-col>
-      <ion-col>
-        <h1>Mary Tan</h1>
-      </ion-col>
+      <ion-item (click)="goToEdit('name')">
+        <ion-icon name="pencil" color="primary"></ion-icon>
+        <ion-col>
+          <h1>Mary Tan</h1>
+        </ion-col>
+      </ion-item>
     </ion-row>
     <ion-row>
       <ion-col size="6"></ion-col>
       <ion-col class="ion-align-self-center">
         <div class="ion-text-left">
-          <ion-icon name="pencil" color="primary"></ion-icon>
-          <a href="/forget-password" routerDirection="forward">
-            Edit password
-          </a>
+          <ion-item (click)="goToEdit('password')">
+            <ion-icon name="pencil" color="primary"></ion-icon>Edit
+            Password</ion-item
+          >
           <br />
-          <ion-icon name="pencil" color="primary"></ion-icon>
-          <a href="/forget-password" routerDirection="forward"> Edit email </a>
+
+          <ion-item (click)="goToEdit('email')"
+            ><ion-icon name="pencil" color="primary"></ion-icon>Edit
+            Email</ion-item
+          >
           <br />
-          <ion-icon name="pencil" color="primary"></ion-icon>
-          <a href="/forget-password" routerDirection="forward">
-            Edit payment method</a
+
+          <ion-item (click)="goToEdit('payment method')">
+            <ion-icon name="pencil" color="primary"></ion-icon>Edit Payment
+            Method</ion-item
           >
         </div>
       </ion-col>
