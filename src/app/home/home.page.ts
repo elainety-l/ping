@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController} from '@ionic/angular';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
@@ -21,7 +22,8 @@ export class HomePage {
 
   constructor(
     private geolocation: Geolocation,
-    private nativeGeocoder: NativeGeocoder) {
+    private nativeGeocoder: NativeGeocoder,
+    private navCtrl : NavController) {
   }
 
 
