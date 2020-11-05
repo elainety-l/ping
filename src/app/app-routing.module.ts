@@ -1,51 +1,80 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { DataResolverService } from "./data-resolver.service";
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: "home",
+    loadChildren: () =>
+      import("./home/home.module").then((m) => m.HomePageModule),
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full",
   },
   {
-    path: 'forget-password',
-    loadChildren: () => import('./forget-password/forget-password.module').then( m => m.ForgetPasswordPageModule)
+    path: "forget-password",
+    loadChildren: () =>
+      import("./forget-password/forget-password.module").then(
+        (m) => m.ForgetPasswordPageModule
+      ),
   },
   {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    path: "register",
+    loadChildren: () =>
+      import("./register/register.module").then((m) => m.RegisterPageModule),
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    path: "login",
+    loadChildren: () =>
+      import("./login/login.module").then((m) => m.LoginPageModule),
   },
   {
-    path: 'payment',
-    loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
+    path: "payment",
+    loadChildren: () =>
+      import("./payment/payment.module").then((m) => m.PaymentPageModule),
   },
   {
-    path: 'chats',
-    loadChildren: () => import('./chats/chats.module').then( m => m.ChatsPageModule)
+    path: "chats",
+    loadChildren: () =>
+      import("./chats/chats.module").then((m) => m.ChatsPageModule),
   },
   {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    path: "profile",
+    loadChildren: () =>
+      import("./profile/profile.module").then((m) => m.ProfilePageModule),
   },
   {
-    path: 'ping',
-    loadChildren: () => import('./ping/ping.module').then( m => m.PingPageModule)
+    path: "ping",
+    loadChildren: () =>
+      import("./ping/ping.module").then((m) => m.PingPageModule),
   },
-
+  {
+    path: "user-profile",
+    loadChildren: () =>
+      import("./user-profile/user-profile.module").then(
+        (m) => m.UserProfilePageModule
+      ),
+  },
+  {
+    path: "edit",
+    loadChildren: () =>
+      import("./edit/edit.module").then((m) => m.EditPageModule),
+  },
+  {
+    path: "edit/:id",
+    resolve: {
+      special: DataResolverService,
+    },
+    loadChildren: () =>
+      import("./edit/edit.module").then((m) => m.EditPageModule),
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
