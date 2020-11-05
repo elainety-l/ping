@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Keyboard } from '@ionic-native/keyboard/ngx';
+
 @Component({
   selector: 'app-ping',
   templateUrl: './ping.page.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PingPage implements OnInit {
 
-  constructor() { }
+  inputAmount: string;
+
+
+  constructor(public keyboard: Keyboard) {
+  }
 
   ngOnInit() {
+  }
+
+  pressKeypad(i){
+    this.inputAmount.concat(i);
   }
 
 }
